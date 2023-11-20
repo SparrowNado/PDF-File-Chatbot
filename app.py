@@ -12,7 +12,7 @@ from htmlTemplates import css, bot_template, user_template, hide_st_style, foote
 from langchain.llms import HuggingFaceHub
 from matplotlib import style
 
-# os.environ["OPENAI_API_KEY"] = "Your-key"
+os.environ["OPENAI_API_KEY"] = "Your-key"
 
 def extract_text_from_pdfs(pdf_docs):
     text = ""
@@ -94,7 +94,7 @@ def main():
                     raw_text = extract_text_from_pdfs(pdf_docs)
                     text_chunks = split_text_into_chunks(raw_text)
 
-                    # embeddings = OpenAIEmbeddings(openai_api_key="Your key")
+                    embeddings = OpenAIEmbeddings(openai_api_key="Your key")
                     vectorstore = create_vectorstore(text_chunks)
                     st.session_state.conversation = create_conversation_chain(vectorstore)
                     st.success("Your Data has been processed successfully")

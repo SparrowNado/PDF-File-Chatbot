@@ -26,6 +26,18 @@ Before using the chatbot, ensure you have the following installed:
 - pip (Python package manager) 📦
 
 
+### ADD the api key first 
+edit this line with your key
+```
+os.environ["OPENAI_API_KEY"] = "Your-key"
+```
+
+then this
+```
+embeddings = OpenAIEmbeddings(openai_api_key="Your key")
+```
+
+
 ### Note 
 
 Make sure you use pycharm so that you can just install packages in one click
